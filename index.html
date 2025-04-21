@@ -47,6 +47,173 @@
                 <a href="" class="btn-header-2">Start your project</a>
                 <a href="">Sign in</a>
             </div>
+            <button class="mdtn" onclick="showModalLog()">Войти</button>
+            <button class="mdtn" onclick="showModalReg()">Регистрация</button>
+
+            <!-- Модальное окно авторизации -->
+            <div class="modal" id="authModal" style="display: none;">
+                <div class="modal_content">
+                    <span class="close-btn" onclick="hideModal()">×</span>
+                    <h2>Вход в аккаунт</h2>
+                    <form class="auth-form">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Пароль">
+                        <button type="submit" class="submit-btn">Войти</button>
+                    </form>
+                    <a href="#" class="forgot-password">Забыли пароль?</a>
+                </div>
+            </div>
+
+
+            <div class="modal" id="regModal" style="display: none;">
+                <div class="modal_content">
+                    <span class="close-btn" onclick="hideModal()">×</span>
+                    <h2>Регистрация</h2>
+                    <form class="auth-form">
+                        <input type="text" placeholder="Имя">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Пароль">
+                        <input type="password" placeholder="Повторите пароль">
+                        <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+
+            <style>
+                .mdtn {
+                    background-color: #24B47E;
+                    border: #239169;
+                    margin-left: 10px;
+                    color: white;
+                    font-size: 11px;
+                    padding: 10px;
+                }
+
+                .span {
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .modal {
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 11;
+                    position: fixed;
+                }
+
+                .modal_content {
+                    padding: 40px;
+                    background-color: #dcfaef;
+                }
+
+                .tab-btn {
+                    padding: 10px 20px;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 16px;
+                    color: #666;
+                    position: relative;
+                }
+
+                .tab-btn.active {
+                    color: #24B47E;
+                    font-weight: bold;
+                }
+
+                .tab-btn.active:after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #24B47E;
+                }
+
+                .close-btn{
+                    cursor: pointer;
+                }
+
+                .auth-form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                .auth-form input {
+                    padding: 12px 15px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    font-size: 14px;
+                }
+
+                .auth-form input:focus {
+                    border-color: #24B47E;
+                    outline: none;
+                }
+
+                .submit-btn {
+                    background-color: #24B47E;
+                    color: white;
+                    border: none;
+                    padding: 12px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    margin-top: 10px;
+                }
+
+                .submit-btn:hover {
+                    background-color: #239169;
+                }
+
+                .modal1 {
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 11;
+                    position: fixed;
+                }
+
+                .modal1_content {
+                    padding: 40px;
+                    background-color: aliceblue;
+                }
+            </style>
+
+            <script>
+                let modalReg = document.getElementById("regModal")
+                let modalAuth = document.getElementById("authModal")
+
+                function showModalReg() {
+                    modalReg.style.display = "flex"
+                }
+
+                function showModalLog() {
+                    modalAuth.style.display = "flex"
+                }
+
+                function hideModal() {
+                    modalReg.style.display = "none"
+                    modalAuth.style.display = "none"
+                }
+
+            </script>
+
+
+
+
         </div>
         <hr>
     </header>
@@ -172,7 +339,7 @@
 
                     <div class="info">
                         <div class="file-preview">
-                            <h2>                             
+                            <h2>
                                 Column view</h2>
                             <p>File previews
                                 Preview any media type, including video and audio.</p>
@@ -198,12 +365,13 @@
 
                     <div class="info">
                         <div class="file-preview">
-                            <h2>   Multi select actions</h2>
+                            <h2> Multi select actions</h2>
                             <p>fhvjbnjkbnjfvbnjvfnbjcd</p>
                         </div>
 
                         <div class="example-app">
-                            <h3>Drag and drop uploading, moving objects, and multiple object selection. As easy as working on your desktop.</h3>
+                            <h3>Drag and drop uploading, moving objects, and multiple object selection. As easy as
+                                working on your desktop.</h3>
                             <p>djfvnfsjvnfjksvkjdnvjdbvhjfbncvdfjkvb fjkvnjkdsnjsfn jfnjsnfjk
                             </p>
                             <div class="created-by">
